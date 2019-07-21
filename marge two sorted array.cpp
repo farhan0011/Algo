@@ -26,7 +26,7 @@ void marge(int a[],int n,int mid,int m)
 void test(int a[],int n,int m)
 {
     if(n==m)
-        return ;
+        return ;///when array has one element or array is sorted
         int st=n,ft=m;
     int mid=(st+ft)/2;
     test(a,st,mid);
@@ -36,10 +36,9 @@ void test(int a[],int n,int m)
 int main()
 {
     int a[]={1,10,9,50,78,};
-    int b[]={2,4,7,9,10};
     test(a,0,4);
     for(int i=0;i<4;i++)
         cout<<a[i]<<" ";
         cout<<endl;
-        cout<<c<<endl;
+        cout<<c<<endl;///counting merge function
 }
