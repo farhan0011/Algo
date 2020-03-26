@@ -21,13 +21,24 @@ void f(int in,int take)
         f(in + 1, take);
         return ;
 }
+int g(int in)
+{
+    if(in == s.size())
+        return 0;
+    if(dp[in] != -1)
+        return dp[in];
+    int a = 1 + g(in +1);
+    int b = g(in + 1);
+    return dp[in] = a + b;
+}
 int main()
 {
-    //memset(dp, -1 ,sizeof dp);
-    //memset(dr, -1 ,sizeof dr);
+    memset(dp, -1 ,sizeof dp);
+    memset(dr, -1 ,sizeof dr);
     cin>>s;
     f(0,0);
     cout<<us.size()<<endl;
     for(auto it = us.begin(); it!=us.end(); it++)
     cout<<(*it)<<endl;
+    cout<<g(0)<<endl;
 }
